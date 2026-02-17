@@ -236,12 +236,6 @@ pretty_allocpy(size_t size, void *contents)
 
 // TODO: A macro to allocate struct + flexible array member.
 
-// Go defer, but rather block scoped and with arbitrary code in it.
-#define defer(...)                              \
-        for (bool pretty_flag = 1;              \
-             pretty_flag;                       \
-             pretty_flag = 0, (__VA_ARGS__))
-
 #define try                                     \
         errno = 0;                              \
         for (bool pretty_flag = 1;              \
